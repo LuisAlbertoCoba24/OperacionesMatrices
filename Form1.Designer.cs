@@ -44,6 +44,7 @@
             this.txtMatrizDos = new System.Windows.Forms.RichTextBox();
             this.txtMatrizResultado = new System.Windows.Forms.RichTextBox();
             this.txtMatrisUno = new System.Windows.Forms.RichTextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // filasLabel
@@ -98,6 +99,7 @@
             this.LimpiarBtn.TabIndex = 5;
             this.LimpiarBtn.Text = "Limpiar";
             this.LimpiarBtn.UseVisualStyleBackColor = true;
+            this.LimpiarBtn.Click += new System.EventHandler(this.LimpiarBtn_Click);
             // 
             // PrimeraMatrizBtn
             // 
@@ -142,7 +144,7 @@
             // 
             // DiagonalBtn
             // 
-            this.DiagonalBtn.Location = new System.Drawing.Point(137, 467);
+            this.DiagonalBtn.Location = new System.Drawing.Point(40, 467);
             this.DiagonalBtn.Name = "DiagonalBtn";
             this.DiagonalBtn.Size = new System.Drawing.Size(91, 40);
             this.DiagonalBtn.TabIndex = 13;
@@ -163,12 +165,13 @@
             // 
             // DivisionBtn
             // 
-            this.DivisionBtn.Location = new System.Drawing.Point(40, 467);
+            this.DivisionBtn.Location = new System.Drawing.Point(137, 467);
             this.DivisionBtn.Name = "DivisionBtn";
-            this.DivisionBtn.Size = new System.Drawing.Size(91, 40);
+            this.DivisionBtn.Size = new System.Drawing.Size(120, 40);
             this.DivisionBtn.TabIndex = 15;
-            this.DivisionBtn.Text = "/";
+            this.DivisionBtn.Text = "Transpuesta";
             this.DivisionBtn.UseVisualStyleBackColor = true;
+            this.DivisionBtn.Click += new System.EventHandler(this.DivisionBtn_Click);
             // 
             // txtMatrizDos
             // 
@@ -194,11 +197,22 @@
             this.txtMatrisUno.TabIndex = 18;
             this.txtMatrisUno.Text = "";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(263, 467);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(145, 40);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Matriz triangular";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MatrizForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 538);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.txtMatrisUno);
             this.Controls.Add(this.txtMatrizResultado);
             this.Controls.Add(this.txtMatrizDos);
@@ -240,6 +254,7 @@
         private System.Windows.Forms.RichTextBox txtMatrizDos;
         private System.Windows.Forms.RichTextBox txtMatrizResultado;
         private System.Windows.Forms.RichTextBox txtMatrisUno;
+        private System.Windows.Forms.Button button2;
     }
 }
 
