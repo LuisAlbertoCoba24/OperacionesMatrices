@@ -1,0 +1,9 @@
+D:\Proyectos\Visual estudio\Matrices\bin\Debug\Matrices.exe.config
+D:\Proyectos\Visual estudio\Matrices\bin\Debug\Matrices.exe
+D:\Proyectos\Visual estudio\Matrices\bin\Debug\Matrices.pdb
+D:\Proyectos\Visual estudio\Matrices\obj\Debug\Matrices.csprojAssemblyReference.cache
+D:\Proyectos\Visual estudio\Matrices\obj\Debug\Matrices.MatrizForm.resources
+D:\Proyectos\Visual estudio\Matrices\obj\Debug\Matrices.Properties.Resources.resources
+D:\Proyectos\Visual estudio\Matrices\obj\Debug\Matrices.csproj.GenerateResource.cache
+D:\Proyectos\Visual estudio\Matrices\obj\Debug\Matrices.exe
+D:\Proyectos\Visual estudio\Matrices\obj\Debug\Matrices.pdb
