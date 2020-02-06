@@ -28,6 +28,19 @@ namespace Matrices
         }//MatrizForm
 
         /*METODOS */
+        //Este metodo limpiara todos los campos colocandolas en blanco
+        public void limpiar()
+        {
+            Filastxt.Text = "";
+            Columnastxt.Text = "";
+            txtMatrisUno.Text = "";
+            txtMatrizDos.Text = "";
+            txtMatrizResultado.Text = "";
+            MatUno = "";
+            MatDos = "";
+            MatResultados = "";
+
+        }
         //Este metodo lee los datos de dimenciones ingresados a la matriz 
         public void EstablcerDimencion()
         {
@@ -153,6 +166,83 @@ namespace Matrices
             }//for
         }//Diagonal
 
+        //Este metodo calculara la traspuesta de una matriz
+        public void traspuesta()
+        {
+            txtMatrisUno.Text = "";
+            MatResultados = "";
+            int[,] temp = new int[10, 10]; //Esta es una matriz temporal para capturar los resultados de la matriz
+            //Recorremos la matriz
+            for ( i = 0; i < NomFila; i++)
+            {
+                for ( j = 0; j < NomColumna; j++ )
+                {
+                    MatrizUno[i, j] = Convert.ToInt32(Interaction.InputBox("Filas" + i + ", Columnas" + j)); //Capturamos los datos
+                    MatUno += MatrizUno[i, j] + "\t";
+                    txtMatrisUno.Text = MatUno; //imprimimos
+                }
+                MatUno += "\n";
+            }
+
+            //Recorremos la matriz
+            for (i = 0; i <  NomColumna; i++)
+            {
+                for (j = 0; j < NomFila; j++)
+                {
+
+                    temp[i,j] = MatrizUno[j, i]; //Almacenamos en una matriz temporal
+                    MatResultados += temp[i, j] + "\t"; //dejamos un espacio
+                    txtMatrizResultado.Text = MatResultados; //imprimimos
+                }
+                MatResultados += "\n"; //colocamos un salto de line
+            }
+        }//traspuesta
+
+        //calculo de matrices  triangulares
+        public void MatricesTriangulares()
+        {
+            //Contadores de ceros 
+            int contadorSuperior = 0;
+            int contadorInferior = 0;
+            //Limpiamos las cajas de texto y nuetra variable de almacen de datos
+            txtMatrisUno.Text = "";
+            MatResultados = "";
+
+            //Llnamos una matriz con dos ciclos
+            for ( i = 0; i < NomFila; i++ )
+            {
+                for ( j = 0; j < NomColumna; j++ )
+                {
+                    MatrizUno[i, j] = Convert.ToInt32(Interaction.InputBox("Filas" + i + ", Columnas" + j)); //Capturamos los datos
+                    MatUno += MatrizUno[i, j] + "\t"; //Almacenamos en el string para su imprecion
+                    txtMatrisUno.Text = MatUno; //imprimimos
+
+                    if ( MatrizUno[i,j] == 0 ) //Comparamos que el nuevo valor sea 0
+                    {
+                        if ( i < j ) //esta condicion nos ayuda a saber si se encuentra arriva de la diagonal o abajo
+                        {
+                            contadorInferior++; //incrementamos el contador
+                        }
+                        else if (i > j)
+                        {
+                            contadorSuperior++; //incrementamos el contador
+                        }
+                    }
+                }//for
+                MatUno += "\n";
+            }//for
+
+            //Compraracion de numero de ceros encontrados en la matriz
+            if ( contadorSuperior > contadorInferior )
+            {
+                MessageBox.Show("Matriz triangular superior"); //Notificamos
+            }
+            else
+            {
+                MessageBox.Show("Matriz triangular Inferior"); //Notificamos
+            }
+
+        }//MatricesTriangulares
 
         /*INTERFAS GRAFICA*/
         private void label1_Click(object sender, EventArgs e)
@@ -168,6 +258,21 @@ namespace Matrices
         private void DiagonalBtn_Click(object sender, EventArgs e)
         {
             Diagonal();
+        }
+
+        private void DivisionBtn_Click(object sender, EventArgs e)
+        {
+            traspuesta();
+        }
+
+        private void LimpiarBtn_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MatricesTriangulares();
         }
 
         private void PrimeraMatrizBtn_Click(object sender, EventArgs e)
